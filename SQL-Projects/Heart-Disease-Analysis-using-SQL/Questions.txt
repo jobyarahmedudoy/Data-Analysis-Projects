@@ -1,0 +1,40 @@
+
+1.Show all patient records in the dataset.
+
+2.Count the total number of patients.
+
+3.Find the number of male and female patients.
+
+4.List distinct chest pain types found in the dataset.
+
+5.Find the average age of all patients.
+
+6.Find the maximum, minimum, and average cholesterol level.
+
+7.Find patients with fasting blood sugar greater than 120 mg/dl.
+
+8.Show patients who have exercise-induced angina.
+
+9.Count how many patients have heart disease (target=1) vs normal (target=0).
+
+10.Find the average resting blood pressure for patients with and without heart disease.
+
+11.Group patients by chest pain type and find the average cholesterol for each group.
+
+12.Find the average maximum heart rate by gender.
+
+13.Find how age affects heart disease: group patients by age ranges (e.g., 30–40, 41–50, etc.) and show average target value.
+
+14.List top 10 patients with the highest cholesterol levels.
+
+15.Find correlation trends: For example, check how many patients with high cholesterol (>240) also have heart disease.
+
+16.Find the percentage of patients with exercise-induced angina who also have heart disease.
+
+17.Use a subquery to find patients whose cholesterol is above the dataset’s average cholesterol.
+
+18.Find the most common combination of symptoms (e.g., chest pain type + fasting blood sugar + target).
+
+19.Calculate the risk rate of heart disease for males vs females (percentage).
+
+20.Find patients most at risk: those with high cholesterol (>240), high resting BP (>140), and heart disease (target=1).

@@ -1,0 +1,162 @@
+
+1.Show all patient records in the dataset.
+Ans: SELECT * FROM heart_disease;
+
+2.Count the total number of patients.
+Ans: SELECT COUNT(*) AS total_patients FROM heart_disease;
+
+3.Find the number of male and female patients.
+Ans: 
+
+SELECT 
+CASE WHEN SEX=1 THEN 'MALE' ELSE 'FEMALE' END AS GENDER,COUNT(*) AS TOTAL_PATIENT
+FROM heart_disease
+GROUP BY SEX;
+
+4.List distinct chest pain types found in the dataset.
+Ans:
+
+SELECT DISTINCT CHEST_PAIN_TYPE,
+CASE WHEN CHEST_PAIN_TYPE=1 THEN 'typical angina'
+	WHEN CHEST_PAIN_TYPE=2 THEN 'atypical angina '
+    WHEN CHEST_PAIN_TYPE=3 THEN 'non-anginal pain '
+    ELSE 'asymptomatic' END AS CHEST_PAIN
+ FROM heart_disease
+ ORDER BY CHEST_PAIN_TYPE
+
+5.Find the average age of all patients.
+Ans : SELECT FLOOR(AVG(AGE)) as Avg_Age FROM heart_disease;
+
+6.Find the maximum, minimum, and average cholesterol level.
+Ans: 
+
+SELECT 
+MAX(cholesterol) as Maximum_cholesterol,
+MIN(cholesterol) as Minimum_cholesterol,
+AVG(cholesterol) as Average_cholesterol
+FROM heart_disease;
+
+7.Count the total number of patients with fasting blood sugar greater than 120 mg/dl.
+Ans: 
+
+SELECT COUNT(*) as fasting_blood_sugar_patients FROM heart_disease
+WHERE fasting_blood_sugar=1; ##(fasting blood sugar > 120 mg/dl) (1 = true; 0 = false)
+
+8.Count the total number of patients who have exercise-induced angina.
+Ans:
+
+SELECT COUNT(*) as exercise_angina_patients FROM heart_disease
+WHERE exercise_angina=1;  ##1 = yes; 0 = no
+
+9.Count how many patients have heart disease (target=1) vs normal (target=0).
+Ans:
+
+SELECT target,
+CASE WHEN target=1 then ' heart disease' 
+ELSE 'normal' end as class,
+COUNT(*) as total_heart_disease_patient FROM heart_disease
+group by target;
+
+10.Find the average resting blood pressure for patients with and without heart disease.
+Ans:
+
+SELECT target,
+CASE WHEN target=1 then ' heart disease' 
+ELSE 'normal' end as class,
+AVG(resting_bp_s) as Avg_Resting_blood_pressure
+FROM heart_disease
+group by target;
+
+11.Group patients by chest pain type and find the average cholesterol for each group.
+Ans:
+
+SELECT chest_pain_type,
+avg(cholesterol) as avg_cholesterol
+FROM heart_disease
+group by chest_pain_type
+order by chest_pain_type;
+
+12.Find the average maximum heart rate by gender.
+Ans:
+
+SELECT sex,
+CASE WHEN SEX=1 THEN 'MALE' ELSE 'FEMALE' END AS GENDER,
+avg(max_heart_rate) as avg_max_heart_rate
+FROM heart_disease
+group by sex
+order by sex;
+
+13.Find how age affects heart disease: group patients by age ranges (e.g., 30–40, 41–50, etc.) and show average target value.
+Ans:
+
+SELECT 
+CASE WHEN age BETWEEN 20 AND 30 THEN '20-30'
+    WHEN age BETWEEN 31 AND 40 THEN '31-40'
+    WHEN age BETWEEN 41 AND 50 THEN '41-50'
+    WHEN age BETWEEN 51 AND 60 THEN '51-60'
+    ELSE '61+' END AS age_group,
+AVG(TARGET)*100 as heart_disease_percent
+FROM heart_disease
+group by age_group
+order by age_group;
+
+
+14.List top 10 patients with the highest cholesterol levels.
+Ans: 
+
+SELECT * FROM heart_disease 
+ORDER BY cholesterol
+DESC LIMIT 10;
+
+15.Find correlation trends: For example, check how many patients with high cholesterol (>240) also have heart disease.
+Ans :
+
+SELECT COUNT(*) as High_cholesterol_hear_disease_patient FROM heart_disease 
+WHERE cholesterol>240 AND TARGET=1;
+
+16.Find the percentage of patients with exercise-induced angina who also have heart disease.
+Ans:
+
+SELECT 
+(SUM(CASE WHEN exercise_angina=1 AND target=1 THEN 1 ELSE 0 END)*100.0 / COUNT(*)) AS percentage
+FROM heart_disease;
+
+17.Find the first 5 patients whose cholesterol levels are higher than the average cholesterol of all patients in the dataset.
+Ans:
+
+SELECT * FROM heart_disease
+WHERE cholesterol > (SELECT AVG(cholesterol) AS Avg_cholesterol FROM heart_disease) ;
+
+18.Find the most common combination of symptoms (e.g., chest pain type + fasting blood sugar + target).
+Ans:
+
+SELECT 
+    chest_pain_type, 
+    fasting_blood_sugar, 
+    target, 
+    COUNT(*) AS freq
+FROM heart_disease
+GROUP BY chest_pain_type, fasting_blood_sugar, target
+ORDER BY freq DESC
+LIMIT 5;
+
+19.Calculate the risk rate of heart disease for males vs females (percentage).
+Ans:
+
+SELECT sex,
+CASE WHEN SEX=1 THEN 'MALE' ELSE 'FEMALE' END AS GENDER,
+ROUND((SUM(CASE WHEN TARGET=1 THEN 1 ELSE 0 END)/COUNT(*))*100,2) as risk_rate
+FROM heart_disease
+GROUP BY sex;
+
+20.Find the Top 5 most at-risk patients who show multiple high-risk conditions — including:High cholesterol (>240 mg/dl),High resting blood pressure (>140 mm Hg)
+Exercise-induced angina (exercise_angina = 1),Confirmed heart disease (target = 1).
+
+Ans:
+
+SELECT age,sex,cholesterol,resting_bp_s,exercise_angina,max_heart_rate,oldpeak,target
+FROM heart_disease
+WHERE cholesterol > 240 AND resting_bp_s > 140
+AND exercise_angina = 1 AND target = 1
+ORDER BY cholesterol DESC, resting_bp_s DESC
+LIMIT 5;
