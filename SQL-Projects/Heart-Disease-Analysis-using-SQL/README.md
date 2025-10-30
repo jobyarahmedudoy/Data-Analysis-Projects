@@ -32,3 +32,11 @@ SELECT * FROM heart_disease;
 -- Output --  
 There are a total of 1,190 patients in the Cleveland,Hungary datasets.
 
+2. **Count the total number of patients**
+
+```sql
+SELECT COUNT(*) AS total_patients FROM heart_disease;
+```
+-- Output -- 
+
+<img width="125" height="50" alt="Capture" src="https://github.com/user-attachments/assets/417e9c21-24f6-4f3b-884f-c2273a3dd7d1" />
