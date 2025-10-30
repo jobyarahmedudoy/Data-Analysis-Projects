@@ -53,4 +53,45 @@ GROUP BY SEX;
 
 <img width="218" height="76" alt="cap2" src="https://github.com/user-attachments/assets/6205bd80-3c95-456d-98b7-eddfda4f17e7" />
 
+4. **List distinct chest pain types found in the dataset.**
+
+```sql
+SELECT DISTINCT CHEST_PAIN_TYPE,
+CASE WHEN CHEST_PAIN_TYPE=1 THEN 'typical angina'
+	WHEN CHEST_PAIN_TYPE=2 THEN 'atypical angina '
+    WHEN CHEST_PAIN_TYPE=3 THEN 'non-anginal pain '
+    ELSE 'asymptomatic' END AS CHEST_PAIN
+ FROM heart_disease
+ ORDER BY CHEST_PAIN_TYPE;
+```
+-- Output -- 
+
+<img width="287" height="114" alt="Capture3" src="https://github.com/user-attachments/assets/8c62575b-bee9-443c-b920-502a54e67633" />
+
+5. **Find the average age of all patients.**
+
+```sql
+SELECT FLOOR(AVG(AGE)) as Avg_Age FROM heart_disease;
+```
+-- Output -- 
+
+<img width="103" height="53" alt="Capture4" src="https://github.com/user-attachments/assets/1a363633-09ac-4dc9-b596-6004bceed238" />
+
+6. **Find the maximum, minimum, and average cholesterol level.**
+
+```sql
+
+SELECT 
+MAX(cholesterol) as Maximum_cholesterol,
+MIN(cholesterol) as Minimum_cholesterol,
+AVG(cholesterol) as Average_cholesterol
+FROM heart_disease;
+```
+-- Output -- 
+
+<img width="465" height="59" alt="Capture6" src="https://github.com/user-attachments/assets/883721be-fe68-4068-8672-9593b5b7b365" />
+
+
+
+
 
