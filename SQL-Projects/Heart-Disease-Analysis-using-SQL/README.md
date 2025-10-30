@@ -17,3 +17,18 @@ The dataset includes the following attributes (columns):
 - `oldpeak`: ST depression induced by exercise relative to rest.
 - `st_slope`: Slope of the peak exercise ST segment.
 - `target`: Output class (1 = patient has heart disease, 0 = normal).
+- 
+
+
+## SQL Queries and Outputs
+
+Here are the SQL queries along with their outputs:
+
+1. **Show all patient records in the dataset**
+
+```sql
+SELECT * FROM heart_disease;
+```
+-- Output --  
+There are a total of 1,190 patients in the Cleveland,Hungary datasets.
+
