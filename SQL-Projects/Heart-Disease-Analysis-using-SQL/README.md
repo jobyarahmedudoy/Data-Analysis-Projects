@@ -40,3 +40,16 @@ SELECT COUNT(*) AS total_patients FROM heart_disease;
 -- Output -- 
 
 <img width="125" height="50" alt="Capture" src="https://github.com/user-attachments/assets/417e9c21-24f6-4f3b-884f-c2273a3dd7d1" />
+
+3. **Find the number of male and female patients.**
+
+```sql
+SELECT 
+CASE WHEN SEX=1 THEN 'MALE' ELSE 'FEMALE' END AS GENDER,COUNT(*) AS TOTAL_PATIENT
+FROM heart_disease
+GROUP BY SEX;
+```
+-- Output -- 
+<img width="218" height="76" alt="cap2" src="https://github.com/user-attachments/assets/6205bd80-3c95-456d-98b7-eddfda4f17e7" />
+
+
