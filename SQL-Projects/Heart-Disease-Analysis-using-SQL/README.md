@@ -279,5 +279,19 @@ LIMIT 5;
 <img width="602" height="132" alt="NNNNNNNNNNNNNNNNN" src="https://github.com/user-attachments/assets/d86a5c8a-64d0-4c2f-abfd-29e6c8751a18" />
 
 
+## Conclusion
+
+This project successfully demonstrates how SQL-based data analysis can extract
+ meaningful medical insights from raw patient data.
+ Through systematic querying, filtering, and aggregation, it reveals critical
+ patterns connecting age, gender, cholesterol, blood pressure, and lifestyle
+ factors to heart disease risk.
+ The study highlights that data-driven healthcare analysis using SQL is not only
+ effective for understanding patient trends but also a valuable tool for early
+ identification of high-risk individuals.
+ In conclusion, this analysis supports the idea that preventive care and lifestyle
+ management, guided by data insights, can play a key role in reducing heart
+ disease prevalence
+
 
 
