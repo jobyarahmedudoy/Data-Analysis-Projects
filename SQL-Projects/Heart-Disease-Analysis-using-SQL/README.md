@@ -50,6 +50,7 @@ FROM heart_disease
 GROUP BY SEX;
 ```
 -- Output -- 
+
 <img width="218" height="76" alt="cap2" src="https://github.com/user-attachments/assets/6205bd80-3c95-456d-98b7-eddfda4f17e7" />
 
 
