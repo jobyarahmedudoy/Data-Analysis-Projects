@@ -211,10 +211,11 @@ WHERE cholesterol>240 AND TARGET=1;
 16. **Find the percentage of patients with exercise-induced angina who also have heart disease.**
 
 ```sql
-
 SELECT 
-(SUM(CASE WHEN exercise_angina=1 AND target=1 THEN 1 ELSE 0 END)*100.0 / COUNT(*)) AS percentage
-FROM heart_disease;
+CONCAT(ROUND((SUM(CASE WHEN exercise_angina=1 
+AND target=1 THEN 1 ELSE 0 END)*100.0 / COUNT(*)),2),'%')
+ AS percentage_of_patients
+ FROM heart_disease;
 ```
 -- Output -- 
 
@@ -224,9 +225,9 @@ FROM heart_disease;
 17. **Find the first 5 patients whose cholesterol levels are higher than the average cholesterol of all patients in the dataset.**
 
 ```sql
-
-SELECT * FROM heart_disease
-WHERE cholesterol > (SELECT AVG(cholesterol) AS Avg_cholesterol FROM heart_disease) ;
+ SELECT * FROM heart_disease
+ WHERE cholesterol > (SELECT AVG(cholesterol) AS Avg_cholesterol FROM heart_disease) 
+limit 5;
 ```
 -- Output -- 
 
