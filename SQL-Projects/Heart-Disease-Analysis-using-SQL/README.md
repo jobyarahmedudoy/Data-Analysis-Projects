@@ -7,7 +7,7 @@ The dataset includes the following attributes (columns):
 
 - `age`: Represents the age of the patient.
 - `chest_pain_type`: Describes the type of chest pain experienced (1 = typical angina, 2 = atypical angina, 3 = non-anginal pain, 4 = asymptomatic).
--`sex`: Indicates gender (1 = male, 0 = female).
+- `sex`: Indicates gender (1 = male, 0 = female).
 - `resting_bp_s`: Resting blood pressure of the patient in mm Hg.
 - `cholesterol`: Serum cholesterol level in mg/dl.
 - `fasting_blood_sugar`: Indicates if fasting blood sugar > 120 mg/dl (1 = true, 0 = false).
