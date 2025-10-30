@@ -91,6 +91,19 @@ FROM heart_disease;
 
 <img width="465" height="59" alt="Capture6" src="https://github.com/user-attachments/assets/883721be-fe68-4068-8672-9593b5b7b365" />
 
+7. **Count the total number of patients with fasting blood sugar greater than 120 mg/dl.**
+
+```sql
+
+SELECT COUNT(*) as fasting_blood_sugar_patients FROM heart_disease
+WHERE fasting_blood_sugar=1; 
+###(fasting blood sugar > 120 mg/dl) (1 = true; 0 = false)
+```
+-- Output -- 
+
+<img width="228" height="54" alt="Capture7" src="https://github.com/user-attachments/assets/09568dfc-0e7d-4857-aebc-78ea8fec280f" />
+
+
 
 
 
