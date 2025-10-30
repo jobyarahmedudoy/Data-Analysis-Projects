@@ -5,8 +5,7 @@ By applying SQL queries on patient data, the project extracts meaningful pattern
 
 The dataset includes the following attributes (columns):
 
--`age`: Represents the age of the patient.
--`sex`: Indicates gender (1 = male, 0 = female).
+- `age`: Represents the age of the patient.
 - `chest_pain_type`: Describes the type of chest pain experienced (1 = typical angina, 2 = atypical angina, 3 = non-anginal pain, 4 = asymptomatic).
 - `resting_bp_s`: Resting blood pressure of the patient in mm Hg.
 - `cholesterol`: Serum cholesterol level in mg/dl.
