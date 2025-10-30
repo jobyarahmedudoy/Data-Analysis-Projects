@@ -31,6 +31,7 @@ SELECT * FROM heart_disease;
 ```
 -- Output --  
 There are a total of 1,190 patients in the Cleveland,Hungary datasets.
+
 <img width="179" height="70" alt="yyyyyyyyyyyy" src="https://github.com/user-attachments/assets/29cadb32-660d-44bc-8094-07fed37c0e06" />
 
 
