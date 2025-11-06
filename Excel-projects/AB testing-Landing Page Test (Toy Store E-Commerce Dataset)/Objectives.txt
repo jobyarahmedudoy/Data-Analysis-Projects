@@ -1,0 +1,49 @@
+Objective 1 :
+
+------------Filter the website traffic------------
+
+Your first objective is to load the website session and pageview data and filter it to the relevant time period and traffic sources for the test.
+
+1.Filter the website sessions table for traffic before July 28, 2012, with “gsearch” as the utm_source and “nonbrand” as the utm_campaign
+
+2.In the website pageviews table, find the pageview_id for the first visit to the new landing page (pageview_url = “/lander-1”), which will mark the start of the A/B test
+
+3.For a fair comparison, remove any pageviews prior to the start of the test
+
+4.Join the website pageviews table with the website sessions table to isolate only the relevant records for the landing page test.
+
+
+Objective 2 :
+
+------------Calculate the bounce rates------------
+
+Your second objective is to calculate the number of sessions, bounced sessions, and bounce rate for each of the landing pages.
+
+1.Using the filtered website pageviews data, extract the first pageview_url (landing page) and count the number of pageviews for each website_session_id
+
+2.Create a new bounced column with a value of 1 if the number of pageviews for a session is 1 (the user left the landing page), and a value of 0 otherwise (the user visited other pages)
+
+3.Calculate the sessions, bounced sessions, and bounce rate (bounced sessions / sessions) for each landing page in the test
+
+4.At first glance, did the new landing page show an improvement in bounce rate?
+
+
+
+Objective 3 :
+
+------------Verify the significance------------
+
+Your final objective is to use a confidence interval to check if the difference in bounce rates is statistically significant.
+
+1.Add a new column (1-p) that subtracts the bounce rate for each landing page from 1
+
+2.Calculate the point estimate (difference in bounce rates) between the landing pages
+
+3.Calculate the critical value (Z(alpha/2)) for a confidence level of 0.95, or 95%
+
+4.Calculate the standard error and margin of error, then set the lower and upper limits of the confidence interval by adding and subtracting the margin or error from the point estimate
+
+5.Can we be 95% confident that the new page has a lower bounce rate than the original?
+
+
+
