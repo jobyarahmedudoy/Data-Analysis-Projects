@@ -1,0 +1,54 @@
+
+1.List each category and the total sales amount generated from that category.
+
+
+2.Find the top 5 products based on total quantity sold.
+
+3.Show the total number of orders handled by each employee.
+
+4.List customers and their total number of orders.
+
+5.Find the average order value per customer.
+
+6.Display all orders along with customer name, employee name, and shipper company.
+
+
+7.Find all products whose price is above the average product price.
+
+8.List customers who have placed more than 10 orders.
+
+9.Show the top 3 customers by total revenue.
+
+10.Find employees whose total sales are higher than the company average.
+
+11.For each category, find the product with the highest unit price.
+
+12.List suppliers who provide more than 3 different products.
+
+
+13.Using a CTE, calculate the monthly sales total and display it in ascending order by month.
+
+14.Create a CTE to find the top 3 employees by monthly sales using RANK().
+
+15.Use LAG() to show each customer’s previous order value and the difference compared to the current order.
+
+16.Use LEAD() to show next month’s total sales for each month, and calculate sales growth.
+
+17.Create a rolling 3-month average of total sales using a window function.
+
+18.For each product category, use LAG() to find the month-over-month sales growth.
+
+
+19.Build a query to calculate each customer’s lifetime value (CLV): total revenue, average order value, and number of orders.
+
+20.Find the best-performing supplier based on total revenue from their products.
+
+21.For each region, identify the top-selling category by total sales amount.
+
+22.Show each employee’s month-over-month sales trend and percentage growth using LAG().
+
+23.Calculate the year-over-year total sales growth for the company.
+
+24.Identify dormant customers who haven’t ordered in the last 6 months.
+
+25.Find the first and most recent order date for every customer using window functions.
