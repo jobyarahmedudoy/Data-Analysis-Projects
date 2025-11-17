@@ -2,6 +2,7 @@
 This project focuses on analyzing the Northwind Traders business database using SQL to uncover insights about sales performance, customer behavior, employee productivity, product trends, and supplier contributions.
 By applying SQL queries on the Northwind dataset, the project reveals meaningful business patterns, relationships, and trends across key operational areas.
 
+## Dataset Overview
 The Northwind Traders database includes multiple interconnected tables representing a complete retail business model. Key tables used in this analysis include:
 
 - `Orders`: – Contains order-level details such as order ID, order date, customer, and employee.
@@ -13,6 +14,23 @@ The Northwind Traders database includes multiple interconnected tables represent
 - `Employees`: – Employees responsible for handling orders.
 - `Shippers`: – Shipping companies used to transport orders.
 - `Region, Territories, EmployeeTerritories` – Geographic and mapping data for regional sales analysis.
+
+## Exploring the dataset 
+
+```sql
+
+SELECT * FROM Categories; -- 8
+SELECT * FROM Customers; -- 91
+SELECT * FROM Employees; -- 9
+SELECT * FROM EmployeeTerritories; -- 49
+SELECT * FROM `Order Details`; -- 2155
+SELECT * FROM  Orders; -- 830
+SELECT * FROM Products; -- 77
+SELECT * FROM Region; -- 4
+SELECT * FROM Shippers; -- 3
+SELECT * FROM Suppliers; -- 29
+SELECT * FROM Territories; -- 53
+```
 
 ## SQL Queries and Outputs
 
