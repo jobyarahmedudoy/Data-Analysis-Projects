@@ -185,6 +185,10 @@ on a.CategoryID=b.CategoryID
 where a.UnitPrice = (select max(UnitPrice) 
 from Products where CategoryID=a.CategoryID);
 ```
+-- Output --
+
+<img width="441" height="190" alt="Capture" src="https://github.com/user-attachments/assets/db5144c5-2e77-4346-bb8e-f3d8c9b0ef0b" />
+
 
 12.**List suppliers who provide more than 3 different products.**
 
