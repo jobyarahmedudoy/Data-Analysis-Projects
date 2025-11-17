@@ -199,6 +199,10 @@ group by b.SupplierID,b.CompanyName
 having count(a.ProductID) >3
 order by Order_Count desc;
 ```
+-- Output --
+
+<img width="398" height="110" alt="Capture" src="https://github.com/user-attachments/assets/4ecf930d-f3bf-4e2d-95fa-fcad5b5f711c" />
+
 
 13.**Using a CTE, calculate the monthly sales total and display it in ascending order by month.**
 
@@ -210,6 +214,10 @@ group by date_format(a.Orderdate,'%b'),month(a.Orderdate))
 select * from MonthlySales
 ORDER BY MONTH(STR_TO_DATE(Month, '%b'));
 ```
+-- Output --
+
+<img width="158" height="271" alt="Capture" src="https://github.com/user-attachments/assets/9fabcf94-f7d1-4ea9-9a58-dccb8ce5b80a" />
+
 
 14.**Create a CTE to find the top 3 employees by monthly sales using RANK().**
 
@@ -227,6 +235,10 @@ from MonthlySales) ranked
 where Rank<=3
 order by str_to_date(MonthName,'%b');
 ```
+-- Output --
+
+<img width="449" height="272" alt="Capture" src="https://github.com/user-attachments/assets/7a9841b8-b495-4c1b-b0fd-2bfa616c2ce9" />
+
 
 15.**Use LAG() to show each customer’s previous order value and the difference compared to the current order.**
 
@@ -242,6 +254,10 @@ LAG(OrderValue) OVER (partition by CustomerID order by OrderDate) as PrevOrderVa
 (OrderValue-LAG(OrderValue) OVER (partition by CustomerID order by OrderDate)) as ChangeInValue
 from CustomerOrders;
 ```
+-- Output --
+
+<img width="861" height="267" alt="Capture" src="https://github.com/user-attachments/assets/78d8034d-ac45-4bab-b52e-0fe46c1b4806" />
+
 
 16.**Use LEAD() to show next month’s total sales for each month, and calculate sales growth.**
 
@@ -257,6 +273,10 @@ LEAD(TotalSales) OVER (order by Month(str_to_date(Month,'%b'))) AS NextMonthSale
 CONCAT(ROUND((LEAD(TotalSales) OVER (order by Month(str_to_date(Month,'%b')))-TotalSales)/TotalSales *100,2),'%') as GrowthPercent
 from MonthlySales;
 ```
+-- Output --
+
+<img width="385" height="266" alt="Capture" src="https://github.com/user-attachments/assets/b704571e-f9ac-4055-9df7-9024de315489" />
+
 
 17.**Create a rolling 3-month average of total sales using a window function.**
 
@@ -272,6 +292,10 @@ ROUND(AVG(TotalSales) OVER (order by MONTH(str_to_date(Month,'%b'))
 rows between 2 preceding and current row),2) as Rolling3MonthAvg
 FROM MonthlySales;
 ```
+-- Output --
+
+<img width="284" height="264" alt="Capture" src="https://github.com/user-attachments/assets/738d8460-c46a-42de-acda-2dc583964ec3" />
+
 
 18.**For each product category, use LAG() to find the month-over-month sales growth.**
 
@@ -293,6 +317,10 @@ as MoM_SalesGrowth
 from MonthlySalesCategoryWise
 order by CategoryName,str_to_date(Month,'%b');
 ```
+-- Output --
+
+<img width="535" height="276" alt="Capture" src="https://github.com/user-attachments/assets/eadf30ea-5638-4179-bb76-03805ce6e0ba" />
+
 
 19.**Build a query to calculate each customer’s lifetime value (CLV): total revenue, average order value, and number of orders.**
 
@@ -314,6 +342,10 @@ GROUP BY a.CustomerID, a.CompanyName)
 SELECT * FROM CustomerStats
 ORDER BY TotalRevenue DESC;
 ```
+-- Output --
+
+<img width="603" height="267" alt="Capture" src="https://github.com/user-attachments/assets/04f55950-dd3c-4b14-a597-77708836bdf7" />
+
 
 20.**Find the best-performing supplier based on total revenue from their products.**
 
@@ -326,6 +358,10 @@ group by b.SupplierID,b.CompanyName
 order by TotalRevenue desc
 limit 1;
 ```
+-- Output --
+
+<img width="357" height="52" alt="Capture" src="https://github.com/user-attachments/assets/5b958edc-c42c-46ad-b17f-2d83e7e88041" />
+
 
 21.**For each region, identify the top-selling category by total sales amount.**
 
@@ -348,6 +384,10 @@ RANK() over (partition by Region order by TotalSales desc) as Rank
 from RegionSales ) as ranked
 where Rank=1;
 ```
+-- Output --
+
+<img width="506" height="110" alt="Capture" src="https://github.com/user-attachments/assets/e1b01d5a-0e20-4b58-a349-4f42c1a23319" />
+
 
 22.**Show each employee’s month-over-month sales trend and percentage growth using LAG().**
 
@@ -368,6 +408,10 @@ lag(TotalSales) over(partition by Employee order by MONTH(str_to_date(Month,'%b'
 from EmployeeGrowth
 order by Employee,str_to_date(Month,'%b');
 ```
+-- Output --
+
+<img width="471" height="279" alt="Capture" src="https://github.com/user-attachments/assets/f6aad59f-a31a-4907-9515-980c7532b672" />
+
 
 23.**Calculate the year-over-year total sales growth for the company.**
 
@@ -395,6 +439,10 @@ WHEN YoY_Growth < -20 THEN 'Major Decline'
 END AS Growth_Status
 from GrowthIndicator;
 ```
+-- Output --
+
+<img width="478" height="89" alt="Capture" src="https://github.com/user-attachments/assets/a791ad84-9d39-4ffe-ae4c-81cddedb8d8a" />
+
 
 24.**Identify dormant customers who haven’t ordered in the last 6 months.**
 
@@ -409,6 +457,10 @@ HAVING LastOrderDate IS NULL
 OR LastOrderDate < NOW() - INTERVAL 6 MONTH
 ORDER BY LastOrderDate;
 ```
+-- Output --
+
+<img width="474" height="272" alt="Capture" src="https://github.com/user-attachments/assets/53f75b1a-7113-4018-a28e-bea7abc4485d" />
+
 
 25.**Find the first and most recent order date for every customer using window functions.**
 
@@ -420,6 +472,10 @@ SELECT DISTINCT
 FROM northwind.Orders
 ORDER BY CustomerID;
 ```
+-- Output --
+
+<img width="399" height="264" alt="Capture" src="https://github.com/user-attachments/assets/7012e901-4c75-4051-b7b9-967b7f495e09" />
+
 
 **Customer Value Analysis Using RFM**
 
@@ -460,6 +516,8 @@ SELECT *,
 FROM Scores
 ORDER BY Segment, Monetary DESC;
 ```
+-- Output --
 
-```
+<img width="930" height="269" alt="Capture" src="https://github.com/user-attachments/assets/3b6e157c-0ff7-4b90-8356-839cd018ad3a" />
+
 
