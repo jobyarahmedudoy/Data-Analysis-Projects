@@ -31,6 +31,9 @@ select a.CategoryName,round(sum(c.UnitPrice*c.Quantity),2) as total_sales_amount
 ```
 -- Output --
 
+<img width="244" height="192" alt="Capture" src="https://github.com/user-attachments/assets/e830e4e0-8064-48d2-a194-a78f1a23cda4" />
+
+
 
 2.**Find the top 5 products based on total quantity sold.**
 
