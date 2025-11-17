@@ -375,6 +375,7 @@ SELECT DISTINCT
     MAX(OrderDate) OVER (PARTITION BY CustomerID) AS MostRecentOrderDate
 FROM northwind.Orders
 ORDER BY CustomerID;
+```
 
 **Customer Value Analysis Using RFM**
 
