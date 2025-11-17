@@ -29,6 +29,8 @@ select a.CategoryName,round(sum(c.UnitPrice*c.Quantity),2) as total_sales_amount
  group by a.CategoryName
  ORDER BY Total_Sales_Amount DESC;
 ```
+-- Output --
+
 
 2.**Find the top 5 products based on total quantity sold.**
 
