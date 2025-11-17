@@ -45,6 +45,10 @@ group by b.ProductName
 order by total_quantity desc
 limit 5;
 ```
+-- Output --
+
+<img width="258" height="133" alt="Capture" src="https://github.com/user-attachments/assets/4ad89459-c090-4fbf-a695-86f7708ec0ab" />
+
 
 3.**Show the total number of orders handled by each employee.**
 
@@ -56,6 +60,9 @@ on a.EmployeeID=b.EmployeeID
 group by b.EmployeeID,b.FirstName,b.LastName
 order by total_orders desc;
 ```
+-- Output --
+
+<img width="312" height="212" alt="Capture" src="https://github.com/user-attachments/assets/1e5bd093-e73a-4a3a-a1e8-328cdcd72e68" />
 
 4.**List customers and their total number of orders.**
 
@@ -66,6 +73,10 @@ on a.CustomerID=b.CustomerID
 group by a.CompanyName
 order by total_orders desc;
 ```
+-- Output --
+
+<img width="282" height="267" alt="Capture" src="https://github.com/user-attachments/assets/a04f1444-e120-4012-aaf3-86a1db64c5f5" />
+
 
 5.**Find the average order value per customer.**
 
@@ -81,6 +92,10 @@ join Customers c on order_summary.CustomerID=c.CustomerID
 group by c.Companyname
 order by Avg_Order_Value desc;
 ```
+-- Output --
+
+<img width="313" height="269" alt="Capture" src="https://github.com/user-attachments/assets/cd96a0cc-4bc7-4f1b-a55f-9a430bf277b6" />
+
 
 6.**Display all orders along with customer name, employee name, and shipper company.**
 
@@ -94,6 +109,10 @@ join northwind.Employees c on a.EmployeeID=c.EmployeeID
 join northwind.Shippers d on a.ShipVia=d.ShipperID
 order by a.OrderID;
 ```
+-- Output --
+
+<img width="466" height="266" alt="Capture" src="https://github.com/user-attachments/assets/ed51f8a3-37fd-4b8e-88f5-53b09f10ec7d" />
+
 
 7.**Find all products whose price is above the average product price.**
 
@@ -102,6 +121,10 @@ select ProductName,UnitPrice from northwind.Products
 where UnitPrice > (select avg(UnitPrice) from northwind.Products)
 order by UnitPrice desc;
 ```
+-- Output --
+
+<img width="236" height="228" alt="Capture" src="https://github.com/user-attachments/assets/f080813b-8539-4073-8272-b1ef25629588" />
+
 
 8.**List customers who have placed more than 10 orders.**
 
@@ -112,6 +135,10 @@ group by a.CompanyName
 having count(b.OrderID) > 10
 order by total_Orders desc;
 ```
+-- Output --
+
+<img width="283" height="267" alt="Capture" src="https://github.com/user-attachments/assets/e409dd5a-f39f-4f92-a2e8-a4f7ffda7776" />
+
 
 9.**Show the top 3 customers by total revenue .**
 
@@ -123,6 +150,10 @@ group by a.CompanyName
 order by Revenue desc
 limit 3;
 ```
+-- Output --
+
+<img width="237" height="88" alt="Capture" src="https://github.com/user-attachments/assets/353002c6-8f34-4b0b-94b5-ca28f9883aec" />
+
 
 10.**Find employees whose total sales are higher than the company average.**
 
@@ -140,6 +171,10 @@ join northwind.`Order Details` c on b.OrderID=c.OrderID
 group by a.EmployeeID ) as avg_sales)
 order by a.EmployeeID,total_sales desc;
 ```
+-- Output --
+
+<img width="330" height="111" alt="image" src="https://github.com/user-attachments/assets/b0ab1738-7af6-43cf-a9a0-034e9cff17b4" />
+
 
 11.**For each category, find the product with the highest unit price.**
 
