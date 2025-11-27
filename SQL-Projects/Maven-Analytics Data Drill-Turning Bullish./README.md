@@ -31,6 +31,9 @@ ORDER BY DATE DESC;
 
 <img width="220" height="70" alt="Final Output" src="https://github.com/user-attachments/assets/f1c28576-b52a-4d0b-97c2-c107674e116f" />
 
+
+-- Excel Output--
+
 <img width="1335" height="633" alt="Capture (3)" src="https://github.com/user-attachments/assets/03fd8e25-006a-4072-83cb-efea3d39f6eb" />
 
 
