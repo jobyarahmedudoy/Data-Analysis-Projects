@@ -16,6 +16,10 @@ END AS GOLDEN_CROSS
 FROM MA;
 ```
 
+-- Output --  
+<img width="545" height="401" alt="Output full data" src="https://github.com/user-attachments/assets/314f26a1-e125-4380-89b2-6dba5093395a" />
+
+
 
 ```sql
 SELECT TOP 1 DATE, [CLOSE]
