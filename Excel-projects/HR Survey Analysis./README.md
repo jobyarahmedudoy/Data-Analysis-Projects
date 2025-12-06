@@ -7,3 +7,4 @@ As an HR Associate, your task is to analyze the survey dataset and prepare a cle
 The goal is to help the department understand overall employee sentiment and identify opportunities to improve workplace experience.
 
 ### Objective 1
+![WhatsApp Image 2025-12-06 at 19 47 24_9256c455](https://github.com/user-attachments/assets/f94a9815-2219-4120-8bb8-6e8c4d4cd34f)
