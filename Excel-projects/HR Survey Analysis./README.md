@@ -5,3 +5,5 @@ This project is based on a guided analysis from Maven Analytics, focused on expl
 
 As an HR Associate, your task is to analyze the survey dataset and prepare a clean, insight-driven visual summary for the HR leadership team.
 The goal is to help the department understand overall employee sentiment and identify opportunities to improve workplace experience.
+
+### Objective 1
