@@ -16,7 +16,7 @@ END //
 DELIMITER ;
 ```
 
-## after insert trigger
+## After insert trigger
 ```sql
 create table triggers.customers1
 (
