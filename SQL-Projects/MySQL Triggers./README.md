@@ -1,7 +1,7 @@
 # MySQL Triggers
 
 ## Before insert trigger
-
+```sql
 DELIMITER //
 
 CREATE TRIGGER triggers.age_insert_testing
@@ -14,10 +14,10 @@ BEGIN
 END //
 
 DELIMITER ;
-
+```
 
 ## after insert trigger
-
+```sql
 create table triggers.customers1
 (
 id INT auto_increment primary key,
@@ -53,10 +53,10 @@ values('Asif','abc@gmail.com','1996-10-24'),
 ('Rock','rock@gmail.com',NULL);
 
 select * from message;
-
+```
 
 ## Before update trigger
-
+```sql
 create table employees
 (
 emp_id INT primary key,
@@ -87,10 +87,10 @@ BEGIN
     END IF;
 END//
 DELIMITER ;
-
+```
 
 ## before delete trigger
-
+```sql
 CREATE TABLE staffs (
     staff_id INT PRIMARY KEY,
     staff_name VARCHAR(100),
@@ -126,14 +126,10 @@ CREATE TABLE staffs_backup (
 );
 
 
-
-
-
-
 DELETE FROM staffs WHERE staff_id = 102;
 
 
 SELECT * FROM staffs_backup;
-
+```
 
 
